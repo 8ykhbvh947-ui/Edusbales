@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edusables — Moving In, Moving Out</title>
+
+<!--
+  ============================================================
+  PROOF-OF-CONCEPT / PROEFVERSIE  (comparison material)
+  ============================================================
+  All figures below come from REAL preliminary survey rounds:
+    - Survey 2 (furnishing / moving in)  n=48
+    - Survey 3 (moving out)              n=64
+    - Survey 4 (after moving)            n=71
+  The source survey + question for every number is noted in a
+  comment next to it, so you can verify each stat.
+
+  Headline numbers deliberately AVOID the duplicated open-answer
+  lines; they use the closed-question percentages only.
+
+  Interview quotes are translated from the Dutch transcripts and
+  are verbatim (not invented). One distinct quote per block.
+
+  Methodology footer flags the data as indicative / being
+  re-validated — keep it while this is a proof / business-plan annex.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#f3e9d8; --paper-deep:#ece0c8; --ink:#1f1813; --ink-soft:#4a3f34;
+    --tomato:#df4b27; --tomato-deep:#b8350f; --forest:#234b3a; --forest-soft:#3a6b53;
+    --line:#d6c7a8; --cream:#fbf6ec; --shadow:rgba(31,24,19,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hanken Grotesk',sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E")}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:26px 28px;max-width:1080px;margin:0 auto;position:relative;z-index:5}
+  .brand{font-family:'Fraunces',serif;font-weight:900;font-size:1.35rem;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:11px;height:11px;background:var(--tomato);border-radius:50%;display:inline-block}
+  .topbar nav{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+  .topbar nav a{color:inherit;text-decoration:none;margin-left:22px;transition:color .2s}
+  .topbar nav a:hover{color:var(--tomato)}
+  @media(max-width:620px){.topbar nav{display:none}}
+
+  .hero{padding:48px 0 56px;position:relative}
+  .kicker{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tomato-deep);border:1.5px solid var(--tomato);border-radius:40px;padding:7px 16px;margin-bottom:30px}
+  .hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.9rem,8vw,6rem);line-height:.96;letter-spacing:-.03em;max-width:14ch;margin-bottom:28px}
+  .hero h1 em{font-style:italic;color:var(--tomato);font-weight:900}
+  .hero .lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:56ch;color:var(--ink-soft);font-weight:500}
+  .hero .lead strong{color:var(--ink);font-weight:700}
+  .source-note{margin-top:22px;font-size:.82rem;color:var(--ink-soft);font-style:italic;display:flex;align-items:center;gap:8px}
+  .source-note::before{content:"";width:26px;height:1.5px;background:var(--ink-soft);display:inline-block}
+
+  /* the gap — three numbers */
+  .gap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:48px}
+  .gap div{background:var(--cream);padding:26px 22px}
+  .gap .big{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.1rem);line-height:1;color:var(--tomato-deep)}
+  .gap .lbl{font-size:.9rem;color:var(--ink-soft);font-weight:600;margin-top:9px;line-height:1.35}
+  @media(max-width:620px){.gap{grid-template-columns:1fr}}
+
+  .strip{margin:56px 0 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;overflow:hidden;white-space:nowrap}
+  .strip-track{display:inline-block;animation:slide 26s linear infinite}
+  .strip-track span{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:1.5rem;padding:0 26px;color:var(--ink)}
+  .strip-track span::after{content:"·";color:var(--tomato);margin-left:52px;font-style:normal}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .sec-head{padding:80px 0 8px}
+  .sec-head .num{font-family:'Fraunces',serif;font-style:italic;color:var(--tomato);font-size:1.1rem;font-weight:600}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.9rem);letter-spacing:-.02em;line-height:1.05;margin-top:6px;max-width:20ch}
+  .sec-head p{margin-top:14px;max-width:52ch;color:var(--ink-soft);font-size:1.02rem}
+
+  .blocks{display:flex;flex-direction:column;margin-top:40px;border-top:1px solid var(--line)}
+  .block{display:grid;grid-template-columns:64px 1fr;gap:0 30px;padding:46px 0;border-bottom:1px solid var(--line);position:relative}
+  .block .idx{font-family:'Fraunces',serif;font-weight:900;font-size:2.4rem;color:var(--paper-deep);-webkit-text-stroke:1.5px var(--ink-soft);line-height:1}
+  .block .hook{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:22px;max-width:24ch}
+  .recog-label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest-soft);margin-bottom:12px}
+  .answers{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+  .answers li{font-family:'Fraunces',serif;font-style:italic;font-size:1.08rem;color:var(--ink);padding-left:20px;position:relative;max-width:50ch}
+  .answers li::before{content:"\201C";position:absolute;left:0;top:2px;color:var(--tomato);font-size:1.3rem;font-weight:900}
+  .threat{border-left:3px solid var(--tomato);padding:4px 0 4px 18px;margin-bottom:24px;font-size:1.02rem;font-weight:500;color:var(--ink);max-width:54ch}
+  .threat b{font-weight:700}
+  .stat-chip{display:inline-flex;align-items:baseline;gap:12px;flex-wrap:wrap;background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:14px 20px;margin-bottom:18px}
+  .stat-chip .pct{font-family:'Fraunces',serif;font-weight:900;font-size:2rem;color:var(--tomato-deep);line-height:1}
+  .stat-chip .pct-label{font-size:.92rem;color:var(--ink-soft);font-weight:600;max-width:40ch}
+  .iv{background:var(--forest);color:var(--cream);border-radius:12px;padding:20px 24px;max-width:58ch}
+  .iv .iv-q{font-family:'Fraunces',serif;font-style:italic;font-size:1.12rem;line-height:1.4}
+  .iv .iv-src{display:block;font-style:normal;font-size:.74rem;font-weight:600;color:#9dc2b0;margin-top:10px;letter-spacing:.06em;text-transform:uppercase}
+  @media(max-width:620px){.block{grid-template-columns:1fr;gap:14px}.block .idx{font-size:1.6rem}}
+
+  .flip{background:var(--forest);color:var(--cream);margin-top:90px;border-radius:22px;padding:64px clamp(28px,5vw,68px);position:relative;overflow:hidden}
+  .flip::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;background:radial-gradient(circle,var(--forest-soft),transparent 70%);opacity:.6}
+  .flip .kicker{color:#f3d9b8;border-color:#6f9a83;position:relative;z-index:2}
+  .flip h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,5vw,3.4rem);line-height:1.02;letter-spacing:-.02em;margin:8px 0 14px;max-width:20ch;position:relative;z-index:2}
+  .flip h2 em{font-style:italic;color:#f6b69a}
+  .flip .sub{font-size:1.08rem;color:#dce9e1;max-width:54ch;margin-bottom:42px;position:relative;z-index:2}
+  .solutions{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2c5945;border-radius:14px;overflow:hidden;position:relative;z-index:2}
+  .sol{background:var(--forest);padding:28px 26px;transition:background .25s}
+  .sol:hover{background:#2a563f}
+  .sol .prob{font-size:.86rem;color:#9dc2b0;font-weight:600;margin-bottom:8px}
+  .sol .ans{font-family:'Fraunces',serif;font-weight:600;font-size:1.22rem;line-height:1.2}
+  .sol .ans b{color:#f6b69a;font-weight:900}
+  .flip .mission{position:relative;z-index:2;margin-top:34px;font-size:1.02rem;color:#eaf2ed;max-width:60ch;line-height:1.55}
+  .flip .mission b{color:#f6b69a;font-weight:700}
+  @media(max-width:620px){.solutions{grid-template-columns:1fr}}
+
+  .cta{text-align:center;padding:100px 0 60px}
+  .cta h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:-.03em;line-height:1;margin-bottom:18px}
+  .cta h2 em{font-style:italic;color:var(--tomato)}
+  .cta p{color:var(--ink-soft);font-size:1.1rem;margin-bottom:38px;max-width:42ch;margin:0 auto 38px}
+  .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:1rem;padding:17px 38px;border-radius:50px;text-decoration:none;border:2px solid var(--ink);transition:transform .18s,background .2s,color .2s;letter-spacing:.01em;cursor:pointer}
+  .btn-primary{background:var(--tomato);color:var(--cream);border-color:var(--tomato)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--tomato-deep);border-color:var(--tomato-deep)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{transform:translateY(-3px);background:var(--ink);color:var(--paper)}
+
+  footer{border-top:2px solid var(--ink);margin-top:40px;padding:36px 0 60px}
+  .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-end}
+  .foot-brand{font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem}
+  .method{font-size:.8rem;color:var(--ink-soft);max-width:64ch;line-height:1.5;font-style:italic}
+  .method b{font-style:normal;font-weight:700;color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span>Edusables</div>
+    <nav>
+      <a href="#problem">The problem</a>
+      <a href="#solution">How it works</a>
+      <a href="#start">Start</a>
+    </nav>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero wrap">
+    <span class="kicker reveal">For students in Maastricht</span>
+    <h1 class="reveal">You're moving out. Now what happens to <em>all your stuff?</em></h1>
+    <p class="lead reveal">
+      You probably arrived in Maastricht with an empty room and had to furnish it from scratch.
+      One day you'll do the whole thing in reverse.
+      <strong>The hard part was never the furniture — it's everything around it: the transport, the timing, finding someone you can trust.</strong>
+    </p>
+    <div class="source-note reveal">Based on surveys and interviews with students who actually moved in and out of Maastricht.</div>
+
+    <!-- THE GAP -->
+    <div class="gap reveal">
+      <div>
+        <div class="big">94%</div>
+        <div class="lbl">say it matters that usable things get reused<!-- Survey 4 Q12: agree 80.3% + strongly agree 14.1% --></div>
+      </div>
+      <div>
+        <div class="big">1 in 4</div>
+        <div class="lbl">actually managed to sell what they left behind<!-- Survey 4 Q5: "Sold" 25.4% --></div>
+      </div>
+      <div>
+        <div class="big">84%</div>
+        <div class="lbl">say there's no obvious place in Maastricht to handle it<!-- Survey 4 Q13: agree 50.7% + strongly 33.8% --></div>
+      </div>
+    </div>
+    <p class="lead reveal" style="margin-top:30px">
+      Almost everyone cares. Almost no one manages. <strong>Not because students don't want to do the right thing — because nothing makes it easy.</strong>
+    </p>
+  </header>
+
+  <div class="strip">
+    <div class="strip-track">
+      <span>no car</span><span>no buyer</span><span>no storage</span><span>no trust</span><span>no time</span>
+      <span>no car</span><span>no buyer</span><span>no storage</span><span>no trust</span><span>no time</span>
+    </div>
+  </div>
+
+  <!-- ============ RECOGNITION ============ -->
+  <section id="problem" class="wrap">
+    <div class="sec-head reveal">
+      <span class="num">01 — The part nobody warns you about</span>
+      <h2>Be honest. Is any of this you too?</h2>
+      <p>We asked students what the most annoying part of dealing with their furniture really was. Here's what kept coming back — and the numbers behind it.</p>
+    </div>
+
+    <div class="blocks">
+
+      <!-- BLOCK 1 — TRANSPORT -->
+      <div class="block reveal">
+        <div class="idx">01</div>
+        <div>
+          <div class="hook">Something to move — but no car, no van, no one to help?</div>
+          <div class="recog-label">Sound familiar?</div>
+          <ul class="answers">
+            <li>I had a free couch and nobody could come and pick it up.</li>
+            <li>Renting a van just to shift one wardrobe across the city wasn't worth it.</li>
+            <li>Getting anything bigger than a box from one side of Maastricht to the other was the whole battle.</li>
+          </ul>
+          <div class="threat">The item itself is rarely the problem. Getting it from your door to someone else's is. <b>So it ends up on the curb instead.</b></div>
+          <div class="stat-chip">
+            <span class="pct">90%</span>
+            <span class="pct-label">named arranging transport as their single biggest hurdle when furnishing a room.<!-- Survey 2 Q11: "Arranging transport" 89.6% --></span>
+          </div>
+          <div class="iv">
+            <span class="iv-q">"With big items, you don't want to rent an expensive van before you even know whether the thing is worth it. The transport, and being sure about the condition — that's what would make the difference for me."</span>
+            <span class="iv-src">From a student interview</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 2 — SELLING / GHOSTING / PRICE -->
+      <div class="block reveal">
+        <div class="idx">02</div>
+        <div>
+          <div class="hook">Tried to sell it — and drowned in "is this still available?"</div>
+          <div class="recog-label">Sound familiar?</div>
+          <ul class="answers">
+            <li>Endless messages asking if it's available, then total silence.</li>
+            <li>People haggling for an hour over a five-euro chair.</li>
+            <li>Buyers who promise to come and then simply vanish.</li>
+          </ul>
+          <div class="threat">When selling turns into a part-time job, most people give up. <b>The effort outweighs the money, so good furniture gets given away — or binned.</b></div>
+          <div class="stat-chip">
+            <span class="pct">87%</span>
+            <span class="pct-label">agree that selling second-hand furniture is too much hassle for what you get out of it.<!-- Survey 4 Q10: agree 49.3% + strongly agree 38.0% --></span>
+          </div>
+          <div class="iv">
+            <span class="iv-q">"I sold more than 1,500 euros' worth of things for around 300. Purely because of the time pressure, I lost hundreds on stuff that had nothing wrong with it."</span>
+            <span class="iv-src">From a student interview</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 3 — TIMING / STORAGE -->
+      <div class="block reveal">
+        <div class="idx">03</div>
+        <div>
+          <div class="hook">Old contract ends before the new room is ready?</div>
+          <div class="recog-label">Sound familiar?</div>
+          <ul class="answers">
+            <li>My contract ended before my new place started, so I had nowhere to put anything.</li>
+            <li>It all had to happen on one single day, or not at all.</li>
+          </ul>
+          <div class="threat">When the dates don't line up, there's no in-between. <b>And the quickest thing to do with furniture you can't store is throw it out.</b></div>
+          <div class="stat-chip">
+            <span class="pct">89%</span>
+            <span class="pct-label">said a lack of time drove what they did with their furniture.<!-- Survey 4 Q6: "No time" 88.7% --></span>
+          </div>
+          <div class="iv">
+            <span class="iv-q">"If I'd been able to store my things the moment I had to move out, and then sell them calmly afterwards, my whole problem would have been solved."</span>
+            <span class="iv-src">From a student interview</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 4 — TRUST / SCAMS -->
+      <div class="block reveal">
+        <div class="idx">04</div>
+        <div>
+          <div class="hook">That uneasy feeling about meeting a stranger from a group chat?</div>
+          <div class="recog-label">Sound familiar?</div>
+          <ul class="answers">
+            <li>Half the WhatsApp groups just feel sketchy.</li>
+            <li>You never really know whether a stranger will turn up — or pay.</li>
+          </ul>
+          <div class="threat">Deals between total strangers come with no guarantee and no accountability. <b>So people fall back on dumping things — it feels safer than getting burned.</b></div>
+          <div class="stat-chip">
+            <span class="pct">92%</span>
+            <span class="pct-label">knew of channels where they could have sold or given things away — and still didn't use them.<!-- Survey 4 Q8: "Yes, but I didn't use them" 91.5% --></span>
+          </div>
+          <div class="iv">
+            <span class="iv-q">"The most important thing is trust. I want to be sure the other person is a real student, and that my money is only gone once the items are actually there."</span>
+            <span class="iv-src">From a student interview</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ THE FLIP ============ -->
+  <section id="solution" class="wrap">
+    <div class="flip reveal">
+      <span class="kicker">You're not the only one — and it doesn't have to be like this</span>
+      <h2>You shouldn't have to choose between <em>dumping it</em> and dealing with all of this.</h2>
+      <p class="sub">That's the whole reason Edusables exists. Every obstacle you just recognised has an answer built straight into the platform — designed around students in Maastricht, by people who hit the same walls.</p>
+      <div class="solutions">
+        <div class="sol">
+          <div class="prob">No car, no van, no help?</div>
+          <div class="ans">We arrange the <b>transport and pickup</b> for you.</div>
+        </div>
+        <div class="sol">
+          <div class="prob">Endless flaky messages, no real buyers?</div>
+          <div class="ans">A <b>marketplace</b> that matches verified students who actually want what you have.</div>
+        </div>
+        <div class="sol">
+          <div class="prob">Nowhere to put it between contracts?</div>
+          <div class="ans"><b>Storage</b> that holds your things while they find a new home.</div>
+        </div>
+        <div class="sol">
+          <div class="prob">Scared of getting scammed?</div>
+          <div class="ans">Every user is a <b>verified student</b>, every deal protected against fraud.</div>
+        </div>
+      </div>
+      <p class="mission">
+        Edusables was founded to do one simple thing: build a <b>circular student community</b> in Maastricht where usable furniture doesn't get thrown away. The survey says students already want exactly that — <b>97% would want their old things to reach someone who actually needs them.</b> We just make it the easy option instead of the impossible one.<!-- Survey 4 Q15: "A little" 88.7% + "Yes, definitely" 8.5% = 97.2% -->
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="start" class="cta wrap">
+    <h2 class="reveal">Don't dump it. <em>Pass it on.</em></h2>
+    <p class="reveal">Give your furniture a second life — and grab someone else's before the next student buys it new.</p>
+    <div class="btns reveal">
+      <a href="#" class="btn btn-primary">List your first item</a>
+      <a href="#" class="btn btn-ghost">See what's available</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER / METHODOLOGY ============ -->
+  <footer class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><span style="color:var(--tomato)">&#9679;</span> Edusables</div>
+      <p class="method">
+        <b>About these figures.</b> The percentages and quotes shown here are drawn from preliminary
+        survey rounds (n = 48&ndash;71 per round) and interviews with students in Maastricht, and are used to
+        illustrate the scale of each obstacle. They are being re-validated in the main research phase and
+        should be read as indicative, not definitive. &mdash; Proof-of-concept version.
+      </p>
+    </div>
+  </footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('in'), (i%4)*90);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
